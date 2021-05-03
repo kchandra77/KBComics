@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block carousel %} {% endblock %}
+
+{% block content %}
+
+ <!-- Three columns of text below the carousel -->
+ 
+  <h2 class="featurette-heading"style="color:#2d5ea8">Nos meilleures <span style="color:#ce3131">tendances</span></h2>
+ <p>Découvrez nos bandes dessinées les plus vendus !</p>
+        <div class="row">
+            {% for product in products %}
+            <div class="col md-3">
+                {% include 'product/single_product.html.twig' %}   
+            </div>
+            {% endfor %}
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"style="color:#2d5ea8">Des BD <span style="color:#ce3131">à vos goûts !</span></h2>
+                <p class="lead">Parcourez des centaines de BD à vos goûts grâce au filtre de recherche par genre !</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('assets/img/first.jpg') }}" alt="Des BD à vos goûts">  
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading"style="color:#2d5ea8">Astérix et Obélix vous proposent de<span style="color:#ce3131"> nouvelles aventures !</span></h2>
+                <p class="lead"> Ils sont de retour ces deux irréductibles Gaulois : Astérix & Obélix accompagné de son animal de compagnie Idéfix ! Découvrez toutes les nouvelles BD !</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="{{ asset('assets/img/second.jpg') }}" alt="Asterix et Obléix sont là !">  
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"style="color:#2d5ea8">Les mangas débarque bientôt<span style="color:#ce3131"> chez KB Comics !</span></h2>
+                <p class="lead">Naruto, One piece, DBS et bien plus encore vont bientôt arriver !</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('assets/img/mangas.jpg') }}" alt="Manga">  
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+         <div class="row featurette">
+            <div class="col-md-7 order-md-3">
+                <h2 class="featurette-heading"style="color:#2d5ea8">Marvel <span style="color:#ce3131">arrive !</span></h2>
+                <p class="lead">Eh oui, les Marvel Comics vont prochainement faire leurs apparitions chez KB Comics !</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="{{ asset('assets/img/marvel.jpg') }}" alt="Bientôt Marvel">  
+            </div>
+        </div>
+        <!-- /END THE FEATURETTES -->
+        {% endblock %}
