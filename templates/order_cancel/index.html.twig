@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiement - KB Comics{% endblock %}
+
+{% block content %}
+   <h2>Erreur de paiement</h2><br><hr>
+
+   <p>Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }},</strong></p><br>
+    Il semblerait que votre paiement est échoué pour votre commande <strong>n°{{ order.reference }}</strong>. <br> 
+    {# Une confirmation d'erreur viens de vos être envoyée par email à l'adresse  <strong>{{ order.user.email }}</strong>.</p>
+    <br> #}
+    <hr> 
+    Vous pouvez toujours <a href="{{ path('order')}}">réessayez le paiement</a>.
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - KB Comics{% endblock %}
+
+{% block content %}
+    <h1>Mon compte</h1>
+    Bienvenue <strong>{{app.user.firstname}}</strong> dans votre espace. <br>
+     C'est ici que vous allez pouvoir gérer vos informations personnelles.
+    <hr>
+<div class="row">
+    <div class="col-md-4">
+        <div class="account-item text-center" style>
+            <img src="{{ asset('assets/img/password.png') }}" alt=""><br>
+           <a href="{{ path('account_password') }}"> Modifier le mot de passe</a><br> 
+        </div>
+    </div>
+     <div class="col-md-4">
+        <div class="account-item text-center">
+            <img src="{{ asset('assets/img/address.png') }}" alt=""><br>
+           <a href="{{ path('account_address') }}"> Gérer mes adresses</a><br>
+        </div>
+    </div>
+     <div class="col-md-4">
+        <div class="account-item text-center">
+           <img src="{{ asset('assets/img/purchase.png') }}" alt=""><br>
+           <a href="{{ path('account_order') }}"> Mes commandes</a><br>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock %}

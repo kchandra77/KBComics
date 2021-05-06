@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous Contacter - KB Comics{% endblock %}
+
+{% block content %}
+<h2>Nous contacter</h2>
+<p>N'hésitez pas à prendre contact avec notre équipe. Nous vous répondrons dans les 24 heures après l'envoi de votre message.</p>
+
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-info"> {{ message }}</div>
+{% endfor %}
+
+<div class="col-md-8">
+    {{form(form)}}
+</div>
+<div class="col md 4">
+<hr>
+<strong>KB Comics</strong><br>
+
+Tél : 01.65.36.25.14 <br>
+14 rue des Fleurs<br>
+75000 Paris <br>
+contact@kbcomics.fr <br>
+</div>
+{% endblock %}

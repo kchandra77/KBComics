@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{product.titre}} - KB Comics{% endblock %}
+
+{% block content %}
+<div class=row>
+    <div class="col-md-4 align-self-center ">
+         <img src="/uploads/{{product.illustration}}" alt=" {{product.titre }}" class="img-fluid">
+    </div>
+    <div class="col-md-7 my-auto">
+        <h1>{{product.titre}}</h1>
+         {% if product.heros == null %}
+        <span class="resume">Héros non disponible</span><br>
+        {% else %}
+        <p>
+             <span class="product-page-price">Héros : {{product.heros}}</span>
+        </p>
+        {% endif %}
+        {# <p>{{product.heros}}</p> #}
+        <span class="product-page-price">Prix : {{ (product.prixpublic / 100 ) |number_format(2, ',', '.') }} €</span><br>
+        {# <span class="product-page-price">Prix éditeur : {{ (product.prixediteur / 100) |number_format(2, ',', '.') }} €</span> #}
+        <hr><br>
+        {% if product.resume == null %}
+        <span class="resume">Résumé non disponible</span><br>
+        {% else %}
+        <p>
+            {{product.resume}}
+        </p>
+        {% endif %}
+        <br><hr>
+        {% if product.auteur == null %}
+        <span class="resume">Auteur non disponible</span><br>
+        {% else %}
+        <p>
+             <span class="product-page-price">Auteur : {{product.auteur}}</span>
+        </p>
+        {% endif %}
+      
+       {% if product.genre == null %}
+        <span class="resume">Genre non disponible</span><br>
+        {% else %}
+        <p>
+             <span class="product-page-price">Genre : {{product.genre}}</span>
+        </p>
+        {% endif %}
+       
+        <br>
+        <a href="{{ path('add_to_cart', { 'id' : product.id}) }}" class="btn btn-info">Ajouter au Panier</a>
+        
+    </div>
+</div>
+
+{# 
+<h3>Nos meilleurs tendence</h3>
+ <p>Découvrez nos bandes déssinées les plus vendu !</p>
+    <div class="row">
+        {% for product in products %}
+        <div class="col md-3">
+            {% include 'product/single_product.html.twig' %}   
+        </div>
+        {% endfor %}
+    </div><!-- /.row --> #}
+
+{% endblock %}
+
